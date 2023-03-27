@@ -271,7 +271,7 @@ class CSIModelConfig:
 
 if __name__ == "__main__":
     import sys
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 5:
         print("Error! Correct Command: python3 csimodel.py Dataset_folder_path prediction_dump")
     raw_data_foler = sys.argv[1]
 

@@ -7,6 +7,6 @@ for node in ${nodes[@]}
 do
         for at in ${attn[@]}
         do
-                echo "python3 csimodel.py Dataset/Data data/${1} ${node} ${at} > data/${1}_${node}_${at}.log"
+                python3 csimodel_${1}.py Dataset/Data data/${1} ${node} ${at} | tee data/${1}_${node}_${at}.log;
         done;
 done;
