@@ -317,6 +317,6 @@ if __name__ == "__main__":
 
     pred_file = sys.argv[2] + '_' + sys.argv[3] + '_' + sys.argv[4]
     with open(pred_file, 'w') as pf:
-        pf.write(str(cfg._labels) + "\n")
+        # pf.write(str(cfg._labels) + "\n")
         for true, pred in zip(np.argmax(y_valid, axis=1), np.argmax(y_pred, axis=1)):
             pf.write(str(true) + " " + str(pred) + "\n")
