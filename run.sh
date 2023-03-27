@@ -7,6 +7,9 @@ for node in ${nodes[@]}
 do
         for at in ${attn[@]}
         do
-                python3 csimodel_${1}.py Dataset/Data data/${1} ${node} ${at} | tee data/${1}_${node}_${at}.log;
+                if [ ! -f data/${1}_${node}_${at} ]
+                then
+                        python3 csimodel_${1}.py Dataset/Data data/${1} ${node} ${at} | tee data/${1}_${node}_${at}.log;
+                fi
         done;
 done;
