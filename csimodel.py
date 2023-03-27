@@ -286,7 +286,7 @@ if __name__ == "__main__":
         train_portion=0.9, seed=379)
     
     # parameters for Deep Learning Model
-    model = cfg.build_model(n_unit_lstm=200, n_unit_atten=400)
+    model = cfg.build_model(n_unit_lstm=int(sys.argv[3]), n_unit_atten=int(sys.argv[4]))
     # train
     model.compile(
         optimizer=tf.keras.optimizers.Adam(learning_rate=1e-4),
@@ -315,7 +315,7 @@ if __name__ == "__main__":
     print("Precision:", precision_score(np.argmax(y_valid, axis=1), np.argmax(y_pred, axis=1), average='weighted'))
     print("Recall:", recall_score(np.argmax(y_valid, axis=1), np.argmax(y_pred, axis=1), average='weighted'))
 
-    pred_file = sys.argv[2]
+    pred_file = sys.argv[2] + '_' + sys.argv[3] + '_' + sys.argv[4]
     with open(pred_file, 'w') as pf:
         pf.write(str(cfg._labels) + "\n")
         for true, pred in zip(np.argmax(y_valid, axis=1), np.argmax(y_pred, axis=1)):
