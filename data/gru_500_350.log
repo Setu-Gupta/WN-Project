@@ -1,0 +1,19 @@
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 500, 90)]         0         
+                                                                 
+ bidirectional (Bidirectiona  (None, 500, 1000)        1776000   
+ l)                                                              
+                                                                 
+ atten_layer (AttenLayer)    (None, 1000)              350700    
+                                                                 
+ dense (Dense)               (None, 7)                 7007      
+                                                                 
+=================================================================
+Total params: 2,133,707
+Trainable params: 2,133,707
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 1/60
