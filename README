@@ -1,0 +1,8 @@
+Dependencies:
+        * tensorflow
+
+How to run:
+        * python3 <name of the script> Dataset/data <number of RNN nodes> <number of attention nodes>
+
+How to run all experiments:
+        * Run the bash script `run.sh`
